@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Sandbox App - v1.0.0</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <span class="status-indicator online"></span>
+            <strong>DevOps Sandbox</strong> <span class="badge">v1.0.0</span>
+        </div>
+        <nav>
+            <a href="#pipeline">Pipeline</a>
+            <a href="#status">Status</a>
+            <a href="#env">Entorno</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>🚀 Aplicación de Prueba CI/CD</h1>
+            <p>Página web ligera diseñada para validar despliegues automatizados, pruebas de integración y flujos de trabajo en repositorios Git.</p>
+            <div class="cta-group">
+                <button class="btn btn-primary" onclick="triggerTest()">Ejecutar Check de Salud</button>
+                <a href="#env" class="btn btn-secondary">Ver Variables</a>
+            </div>
+        </section>
+
+        <section id="status" class="grid-cards">
+            <div class="card">
+                <div class="card-header">
+                    <h3>🟢 Estado del Servicio</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>Status:</strong> <span id="health-status" class="text-success">200 OK</span></p>
+                    <p><strong>Uptime:</strong> 99.9%</p>
+                    <p><strong>Latencia:</strong> 12ms</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>📦 Detalle de Commit</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>Branch:</strong> <code>main</code></p>
+                    <p><strong>Commit Hash:</strong> <code>a1b2c3d4</code></p>
+                    <p><strong>Autor:</strong> DevOps Team</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>⚡ Entorno de Ejecución</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>Ambiente:</strong> <span class="tag tag-env">Staging</span></p>
+                    <p><strong>Servidor:</strong> Nginx / Docker Container</p>
+                    <p><strong>Región:</strong> us-east-1</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pipeline" class="pipeline-section">
+            <h2>🔄 Pipeline Status Checklist</h2>
+            <ul class="checklist">
+                <li class="checked">✅ Linting & Style Checks (Passed)</li>
+                <li class="checked">✅ Unit Tests (Passed)</li>
+                <li class="checked">✅ Docker Build & Tag (Passed)</li>
+                <li class="pending">⏳ Integration Tests (In Progress)</li>
+                <li class="pending">⏳ Automatic Deployment (Pending)</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 DevOps Testing Suite — Generado para pruebas de repositorios Git y CI/CD</p>
+    </footer>
+
+    <script>
+        function triggerTest() {
+            const status = document.getElementById('health-status');
+            status.innerText = "Checking...";
+            status.className = "text-warning";
+            setTimeout(() => {
+                status.innerText = "200 OK (Healthy)";
+                status.className = "text-success";
+                alert("✅ Check de salud completado exitosamente!");
+            }, 800);
+        }
+    </script>
+</body>
+</html>
