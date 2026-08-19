@@ -27,7 +27,7 @@
             <h1>🚀 Aplicación de Prueba CI/CD</h1>
             <p>Página web ligera diseñada para validar despliegues automatizados, pruebas de integración y flujos de trabajo en repositorios Git.</p>
             <div class="cta-group">
-                <button class="btn btn-primary" onclick="triggerTest()">Ejecutar Check de Salud</button>
+                <button class="btn btn-primary" id="btn-health-check">Ejecutar Check de Salud</button>
                 <a href="#env" class="btn btn-secondary">Ver Variables</a>
             </div>
         </section>
@@ -83,17 +83,7 @@
         <p>&copy; 2026 DevOps Testing Suite — Generado para pruebas de repositorios Git y CI/CD</p>
     </footer>
 
-    <script>
-        function triggerTest() {
-            const status = document.getElementById('health-status');
-            status.innerText = "Checking...";
-            status.className = "text-warning";
-            setTimeout(() => {
-                status.innerText = "200 OK (Healthy)";
-                status.className = "text-success";
-                alert("✅ Check de salud completado exitosamente!");
-            }, 800);
-        }
-    </script>
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="animations.js"></script>
 </body>
 </html>
